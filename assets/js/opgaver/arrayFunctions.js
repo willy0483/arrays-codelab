@@ -1,19 +1,17 @@
-
-let myArray = ['element1', 'element2', 'element3'];
-let myPartArray = ['partElement1', 'partElement2', 'PartElement3'];
-
-
-
+let myArray = ["element1", "element2", "element3"];
+let myPartArray = ["partElement1", "partElement2", "PartElement3"];
 
 //.........................................................
 // opgave 1 tilføj element4 til enden myArray
 
 // din kode her...
+myArray.push("element4");
 console.log(myArray);
 
 // opgave 1 fjern element4 igen
 
 // din kode her...
+myArray.pop("element4");
 console.log(myArray);
 
 //.........................................................
@@ -21,18 +19,19 @@ console.log(myArray);
 // opgave 2 tilføj element4 til starten myArray
 
 // din kode her...
+myArray.unshift("element4");
 console.log(myArray);
 
 // opgave 2 fjern element4 igen
 
 // din kode her...
+myArray.shift("element4");
 console.log(myArray);
 
 //.........................................................
 
-let myFruits = ['æble', 'pære', 'banan', 'appelsin', 'citron'];
-let myVegetables = ['salat', 'blomkål', 'spidskål', 'agurk'];
-
+let myFruits = ["æble", "pære", "banan", "appelsin", "citron"];
+let myVegetables = ["salat", "blomkål", "spidskål", "agurk"];
 
 /* opgave 3 splice()
  tilføj mandarin og fersken efter pære i myFruits
@@ -48,7 +47,6 @@ console.log(myFruits);
 
 // din kode her...
 myFruits.splice(2, 2);
-
 console.log(myFruits);
 
 //.........................................................
@@ -58,9 +56,8 @@ træk blomkål og spidskål ud af arrayen myVegetables
 og ind i en ny array der hedder myCabbage*/
 
 // din kode her...
-
-
-
+const myCabbage = myVegetables;
+myCabbage.splice(1, 2);
 console.log(myCabbage);
 
 //.........................................................
@@ -68,10 +65,11 @@ console.log(myCabbage);
  sæt arrays myFruits og myVegetables sammen i en ny array der hedder myYummies
  */
 
-
 // din kode her...
+let array1 = myFruits;
+let array2 = myVegetables;
 
-
+let myYummies = array1.concat(myVegetables);
 
 console.log(myYummies);
 
@@ -81,10 +79,8 @@ console.log(myYummies);
  sorter array  myYummies fra opgave 5
  */
 
-
 // din kode her...
-
-
+myYummiessort = myYummies.sort;
 
 console.log(myYummies);
 
@@ -92,8 +88,8 @@ console.log(myYummies);
  vend rækkefølgen på  array  myYummies fra opgave 6
  */
 
-
 // din kode her...
+myYummiesreversed = myYummies.reverse();
 
 console.log(myYummies);
 
@@ -107,16 +103,41 @@ console.log(myYummies);
 let myNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // din kode her...
+
+let myNextNumbers = myNumbers.map((x) => {
+  return x + 7;
+});
 console.log(myNextNumbers);
+
+let myLastNumbers = myNumbers.map((x) => {
+  return x + 12;
+});
+
 console.log(myLastNumbers);
 
 //.........................................................
 /* opgave 8 filter()
 skriv en kode der kan give os en ny array, udfra myNames, hvor navnet keld ikke findes i.
 */
-let myNames = ['keld', 'søren', 'jens', 'tine', 'keld', 'ib', 'lene', 'keld', 'frederikke', 'line', 'kurt'];
+let myNames = [
+  "keld",
+  "søren",
+  "jens",
+  "tine",
+  "keld",
+  "ib",
+  "lene",
+  "keld",
+  "frederikke",
+  "line",
+  "kurt",
+];
 
+function checkName(name) {
+  return name !== "keld";
+}
+
+let filteredNames = myNames.filter(checkName);
+console.log(filteredNames);
 
 //.........................................................
-
-
